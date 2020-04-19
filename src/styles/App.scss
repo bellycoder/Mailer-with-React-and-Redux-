@@ -32,6 +32,8 @@ body {
 .filter{
     grid-column-start: 1;
     grid-column-end: 2;
+    justify-content: space-between;
+    width: 100%;
   }
 .options{
     grid-column-start: 2;
@@ -40,8 +42,6 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(2, 1fr);
     
     .buttonDelete{
         font-family: $font;
