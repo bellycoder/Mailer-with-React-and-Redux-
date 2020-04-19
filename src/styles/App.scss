@@ -7,6 +7,7 @@ $colors:(
     bluebg: #EEFAFF,   //unread
     grayc: #F4F5F5      //read 
 );
+$inner-margin: 15px;
 
 body {
     height: 100%;
@@ -29,6 +30,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 3px 4px 12px -2px rgba(0,0,0,0.65);
 }
+
+.icon{
+    width: 21px;
+}
+
 .filter{
     grid-column-start: 1;
     grid-column-end: 2;
@@ -93,6 +99,31 @@ body {
     grid-row: span 2;
     border: 2px;
 }
+
+.messagePreview{
+    display: flex;
+    width: 100%;
+
+    .large_block{
+        display: block;
+        font-size: 14px;
+        width: 85%;
+        margin-left: $inner-margin;
+    }
+
+    .small_block{
+        display: block;
+        font-size: 12px;
+        width: 25%;
+        text-align: end;
+        margin-right: $inner-margin;
+    }
+
+    .sender{
+
+    }
+}
+
 .search{
     grid-column: 1 / 2;
     grid-row: 2 / 3;

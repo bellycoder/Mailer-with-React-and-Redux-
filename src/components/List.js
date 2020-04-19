@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import MessagePreview from "./MessagePreview";
 
 export default class List extends Component {
     render() {
         return (
             <div className="lista">
-                <h3>lista</h3>
+                <MessagePreview/>
             </div>
         )
     }
