@@ -25,14 +25,43 @@ body {
           box-shadow: 3px 4px 12px -2px rgba(0, 0, 0, 0.65);
 }
 
-.filter {
+.inboxFilter {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+}
+
+.inboxFilter .inbox {
+  margin-left: 20px;
+  font-family: "Helvetica";
+  font-size: 18px;
+}
+
+.inboxFilter .count {
+  color: #ffffff;
+  text-align: center;
+  background: #FC3401;
+  width: 20px;
+  border-radius: 20px;
+  padding: 7px;
+  max-width: 10px;
+  margin: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.inboxFilter .select {
+  margin: 5%;
 }
 
 .options {
@@ -54,7 +83,7 @@ body {
 .options .buttonDelete {
   font-family: "Helvetica";
   font-size: 12px;
-  background-color: #ee2c2e;
+  background-color: #FC3401;
   color: white;
   border-radius: 2px;
   border: none;
@@ -77,7 +106,7 @@ body {
 }
 
 .options .buttonUnread {
-  background-color: #2cbaed;
+  background-color: #03B9ED;
   font-family: "Helvetica";
   font-size: 12px;
   color: white;

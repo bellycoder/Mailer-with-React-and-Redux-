@@ -2,10 +2,10 @@ $default-bg: #EEF4F9;
 $borders: 8px;
 $font: 'Helvetica';
 $colors:(
-    "redc": #FC3401,
-    "bluec": #03B9ED,
-    "bluebg": #EEFAFF,   //unread
-    "grayc": #F4F5F5      //read
+        redc: #FC3401,
+        bluec: #03B9ED,
+        bluebg: #EEFAFF,   //unread
+        grayc: #F4F5F5      //read
 );
 $inner-margin: 15px;
 
@@ -17,9 +17,9 @@ body {
 .container {
     font-family: $font;
     font-size: 12px;
-    color: #3B3D3F; 
+    color: #3B3D3F;
 }
-.contenedor{     
+.contenedor{
     background-color:#f5f5f5;
     width: 90%;
     max-width: 1000px;
@@ -35,12 +35,40 @@ body {
     width: 18px;
 }
 
-.filter{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    justify-content: space-between;
-    width: 100%;
-  }
+.filter {
+    .inboxFilter {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .inbox {
+            margin-left: 20px;
+            font-family: $font;
+            font-size: 18px;
+        }
+
+        .count {
+            color: #ffffff;
+            text-align: center;
+            background: map-get($colors, redc);
+            width: 20px;
+            border-radius: 20px;
+            padding: 7px;
+            max-width: 10px;
+            margin: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .select {
+            margin: 5%;
+        }
+    }
+}
+
 .options{
     grid-column-start: 2;
     grid-column-end: 3;
@@ -48,11 +76,11 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    
+
     .buttonDelete{
         font-family: $font;
         font-size: 12px;
-        background-color: #ee2c2e;
+        background-color: map-get($colors , redc );
         color: white;
         border-radius: 2px;
         border: none;
@@ -71,11 +99,11 @@ body {
         padding: 5px;
         width: 70px;
         margin-left: 10px;
-        cursor: pointer; 
-       
+        cursor: pointer;
+
     }
     .buttonUnread{
-        background-color: #2cbaed;
+        background-color:map-get($colors, bluec );
         font-family: $font;
         font-size: 12px;
         color: white;
@@ -88,7 +116,7 @@ body {
         float: right;
         margin: 5%;
     }
-   
+
 }
 .lista{
     grid-column: 1 / 2 ;
@@ -135,19 +163,15 @@ body {
 }
 
 
-.read{
+.read {
     background-color: map-get($colors, bluebg);
     border-left: 3px solid map_get($colors, bluec);
 
-    .large_block{
-        .sender{
+    .large_block {
+        .sender {
             color: map-get($colors, bluec);
         }
     }
-}
-
-.unread{
-
 }
 
 .search{
@@ -162,7 +186,7 @@ body {
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
-  }
+}
 
 .search .search-container button {
     float: right;
@@ -173,5 +197,5 @@ body {
     font-size: 17px;
     border: none;
     cursor: pointer;
-  }
+}
 
