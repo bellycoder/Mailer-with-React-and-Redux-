@@ -1,0 +1,33 @@
+.filter {
+  .inboxFilter {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .inbox {
+      margin-left: 20px;
+      font-family: $font;
+      font-size: 18px;
+    }
+
+    .count {
+      color: #ffffff;
+      text-align: center;
+      background: map-get($colors, redc);
+      width: 20px;
+      border-radius: 20px;
+      padding: 7px;
+      max-width: 10px;
+      margin: 10px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .select {
+      margin: 5%;
+    }
+  }
+}

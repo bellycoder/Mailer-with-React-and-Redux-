@@ -29,173 +29,18 @@ body {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 3px 4px 12px -2px rgba(0,0,0,0.65);
+
+    @import "MessageBody";
+    @import "Options";
+    @import "Filter";
+    @import "Search";
+    @import "TitleMessage";
+    @import "List";
 }
 
 .icon{
     width: 18px;
 }
 
-.filter {
-    .inboxFilter {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
 
-        .inbox {
-            margin-left: 20px;
-            font-family: $font;
-            font-size: 18px;
-        }
-
-        .count {
-            color: #ffffff;
-            text-align: center;
-            background: map-get($colors, redc);
-            width: 20px;
-            border-radius: 20px;
-            padding: 7px;
-            max-width: 10px;
-            margin: 10px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        .select {
-            margin: 5%;
-        }
-    }
-}
-
-.options{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-
-    .buttonDelete{
-        font-family: $font;
-        font-size: 12px;
-        background-color: map-get($colors , redc );
-        color: white;
-        border-radius: 2px;
-        border: none;
-        padding: 5px;
-        width: 70px;
-        margin-left: 10px;
-        cursor: pointer;
-
-    }
-    .buttonSpam{
-        font-family: $font;
-        font-size: 12px;
-        background-color: #f5f5f5;
-        color: gray;
-        border-radius: 4px;
-        padding: 5px;
-        width: 70px;
-        margin-left: 10px;
-        cursor: pointer;
-
-    }
-    .buttonUnread{
-        background-color:map-get($colors, bluec );
-        font-family: $font;
-        font-size: 12px;
-        color: white;
-        border-radius: 2px;
-        border: none;
-        padding: 5px;
-        width: auto;
-        text-align: center;
-        cursor: pointer;
-        float: right;
-        margin: 5%;
-    }
-
-}
-.lista{
-    grid-column: 1 / 2 ;
-    grid-row: 3 /5 ;
-}
-.tittleMessage{
-    grid-column: 2 / 3 ;
-    grid-row: 2 /3 ;
-}
-.mensaje{
-    grid-row: span 2;
-    border: 2px;
-}
-
-.messagePreview{
-    display: flex;
-    width: calc(100% - 4px);
-    border: 1px solid #dce7fe;
-    border-bottom: 0;
-    background-color: white;
-
-    .large_block, .small_block{
-        display: block;
-        line-height: 22px;
-        padding: 7px;
-    }
-
-    .large_block{
-        font-size: 14px;
-        width: 85%;
-        padding-left: $inner-margin;
-    }
-
-    .small_block{
-        font-size: 13px;
-        width: 25%;
-        text-align: end;
-        padding-right: $inner-margin;
-    }
-}
-
-.messagePreview:last-child{
-    border: 1px solid #dce7fe;
-}
-
-
-.read {
-    background-color: map-get($colors, bluebg);
-    border-left: 3px solid map_get($colors, bluec);
-
-    .large_block {
-        .sender {
-            color: map-get($colors, bluec);
-        }
-    }
-}
-
-.search{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.search input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-}
-
-.search .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
 

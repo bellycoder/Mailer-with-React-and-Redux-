@@ -1,0 +1,47 @@
+.lista{
+  grid-column: 1 / 2 ;
+  grid-row: 3 /5 ;
+
+  .messagePreview{
+    display: flex;
+    width: calc(100% - 4px);
+    border: 1px solid #dce7fe;
+    border-bottom: 0;
+    background-color: white;
+
+    .large_block, .small_block{
+      display: block;
+      line-height: 22px;
+      padding: 7px;
+    }
+
+    .large_block{
+      font-size: 14px;
+      width: 85%;
+      padding-left: $inner-margin;
+    }
+
+    .small_block{
+      font-size: 13px;
+      width: 25%;
+      text-align: end;
+      padding-right: $inner-margin;
+    }
+  }
+
+  .messagePreview:last-child{
+    border: 1px solid #dce7fe;
+  }
+
+
+  .read {
+    background-color: map-get($colors, bluebg);
+    border-left: 3px solid map_get($colors, bluec);
+
+    .large_block {
+      .sender {
+        color: map-get($colors, bluec);
+      }
+    }
+  }
+}

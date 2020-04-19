@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class MessageBody extends Component {
     render() {
         return (
-            <div className="mensaje">
+            <div className="messageBody">
                 <h3>Mensaje</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. Malesuada fames ac turpis egestas maecenas pharetra convallis. In mollis nunc sed id semper risus in. Tincidunt ornare massa eget egestas purus viverra. Scelerisque fermentum dui faucibus in ornare quam viverra. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Blandit libero volutpat sed cras ornare arcu dui vivamus. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Vitae aliquet nec ullamcorper sit amet risus. Eget nunc lobortis mattis aliquam faucibus purus.
 

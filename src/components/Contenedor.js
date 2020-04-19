@@ -6,8 +6,6 @@ import List from './List'
 import MessageBody from './MessageBody'
 import TittleMessage from './TittleMessage'
 
-
-
 export default class Contenedor extends Component {
     render() {
         return (
