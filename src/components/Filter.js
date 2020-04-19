@@ -6,7 +6,7 @@ export default class Filter extends Component {
                 <div className="inboxFilter">
                    <div>
                         <a className="inbox">Inbox</a> 
-                        <a className="count">0</a>    
+                        <a className="count">1000000000000000000</a>    
                     </div>
                     <div className="select">
                         <select id="inbox-spam">
