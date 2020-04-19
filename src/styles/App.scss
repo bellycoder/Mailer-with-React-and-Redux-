@@ -96,6 +96,7 @@ body {
 .search{
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    column-width: 100;
 }
 
 .search input[type=text] {
