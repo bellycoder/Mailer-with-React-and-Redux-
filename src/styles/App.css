@@ -17,8 +17,8 @@ body {
   border-radius: 8px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (auto)[3];
-      grid-template-rows: repeat(3, auto);
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   -webkit-box-shadow: 3px 4px 12px -2px rgba(0, 0, 0, 0.65);
@@ -96,8 +96,17 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
   -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 /5;
+}
+
+.tittleMessage {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 3 /4;
+  grid-row: 2 /3;
 }
 
 .mensaje {
@@ -112,8 +121,6 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  -webkit-column-width: 100;
-          column-width: 100;
 }
 
 .search input[type=text] {
