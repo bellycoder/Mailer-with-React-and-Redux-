@@ -2,11 +2,12 @@ $default-bg: #EEF4F9;
 $borders: 8px;
 $font: 'Helvetica';
 $colors:(
-    redc: #FC3401,
-    bluec: #03B9ED,
-    bluebg: #EEFAFF,   //unread
-    grayc: #F4F5F5      //read 
+    "redc": #FC3401,
+    "bluec": #03B9ED,
+    "bluebg": #EEFAFF,   //unread
+    "grayc": #F4F5F5      //read
 );
+$inner-margin: 15px;
 
 body {
     height: 100%;
@@ -29,6 +30,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 3px 4px 12px -2px rgba(0,0,0,0.65);
 }
+
+.icon{
+    width: 18px;
+}
+
 .filter{
     grid-column-start: 1;
     grid-column-end: 2;
@@ -96,6 +102,54 @@ body {
     grid-row: span 2;
     border: 2px;
 }
+
+.messagePreview{
+    display: flex;
+    width: calc(100% - 4px);
+    border: 1px solid #dce7fe;
+    border-bottom: 0;
+    background-color: white;
+
+    .large_block, .small_block{
+        display: block;
+        line-height: 22px;
+        padding: 7px;
+    }
+
+    .large_block{
+        font-size: 14px;
+        width: 85%;
+        padding-left: $inner-margin;
+    }
+
+    .small_block{
+        font-size: 13px;
+        width: 25%;
+        text-align: end;
+        padding-right: $inner-margin;
+    }
+}
+
+.messagePreview:last-child{
+    border: 1px solid #dce7fe;
+}
+
+
+.read{
+    background-color: map-get($colors, bluebg);
+    border-left: 3px solid map_get($colors, bluec);
+
+    .large_block{
+        .sender{
+            color: map-get($colors, bluec);
+        }
+    }
+}
+
+.unread{
+
+}
+
 .search{
     grid-column: 1 / 2;
     grid-row: 2 / 3;
