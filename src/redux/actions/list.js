@@ -11,9 +11,10 @@ const LIST_ACTIONS = {
         type: LIST_FILTERS.CLEAR_INTERVAL,
         interval
     }),
-    startInterval: time => ({
+    startInterval: (time, callback) => ({
         type: LIST_FILTERS.START_INTERVAL,
-        time
+        time,
+        callback
     }),
     addElement: data => ({
         type: LIST_FILTERS.ADD_ELEMENT,

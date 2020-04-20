@@ -7,18 +7,26 @@ const List = class List extends Component {
 
     constructor(props) {
         super(props);
-        const {startInterval, messageList} = this.props;
+        const {startInterval, addElement} = this.props;
         this.state = {
-            messageList: messageList || []
+            papas: true
         };
-        startInterval(10);
+        this.addElement = addElement.bind(this);
+        startInterval(90, this.addElement);
     }
 
     messageList() {
-        const {messageList} = this.state;
+        const {messageList} = this.props;
         return messageList.map((current) => {
-            return <MessagePreview unread={current.isReaded}/>
+            return <div className="messageComponent" onClick={() => this.onClickMessage(current.id)}>
+                <MessagePreview key={current.id} data={current}/>
+            </div>
         })
+    }
+
+    onClickMessage(id){
+        const {changeState} = this.props;
+        changeState(id, true)
     }
 
     render(){
@@ -29,6 +37,11 @@ const List = class List extends Component {
         )
     }
 
+    // Code cleanup to prevent timer to continue running
+    componentWillUnmount() {
+        const {cleanInterval, interval} = this.props;
+        cleanInterval(interval);
+    }
 };
 
 const mapStateToProps = (state) => {
@@ -36,8 +49,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    startInterval: (time) => dispatch(LIST_ACTIONS.startInterval(time)),
-    clearInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval))
+    startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
+    clearInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
+    addElement: (data) => dispatch(LIST_ACTIONS.addElement(data)),
+    changeState: (id, isReaded) => dispatch(LIST_ACTIONS.changeState(id, isReaded))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
