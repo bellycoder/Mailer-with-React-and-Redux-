@@ -1,6 +1,8 @@
 $default-bg: #EEF4F9;
 $borders: 8px;
 $font: 'Helvetica';
+$fsize: 12px;
+$fcolor: #3B3D3F; 
 $colors:(
         redc: #FC3401,
         bluec: #03B9ED,
@@ -16,8 +18,8 @@ body {
 
 .container {
     font-family: $font;
-    font-size: 12px;
-    color: #3B3D3F;
+    font-size: $fsize;
+    color: $fcolor;
 }
 .contenedor{
     background-color:#f5f5f5;

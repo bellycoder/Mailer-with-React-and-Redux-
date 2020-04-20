@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAA;EACV,QAAQ,EAAE,MAAM;EAChB,MAAM,EAAE,GAAG;EACX,MAAM,EAAE,EAAE;CACX",
+    "sources": [
+        "MessageBody.scss"
+    ],
+    "names": [],
+    "file": "MessageBody.css"
+}

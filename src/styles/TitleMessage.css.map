@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAA;EACZ,WAAW,EAAE,KAAM;EACnB,QAAQ,EAAE,IAAK;CAChB",
+    "sources": [
+        "TitleMessage.scss"
+    ],
+    "names": [],
+    "file": "TitleMessage.css"
+}
