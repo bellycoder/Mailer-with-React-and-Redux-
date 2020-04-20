@@ -1,6 +1,8 @@
 .lista{
   grid-column: 1 / 2 ;
   grid-row: 3 /5 ;
+  overflow: auto;
+  height: 500px;
 
   .messagePreview{
     display: flex;
@@ -29,12 +31,7 @@
     }
   }
 
-  .messagePreview:last-child{
-    border: 1px solid #dce7fe;
-  }
-
-
-  .read {
+  .unread {
     background-color: map-get($colors, bluebg);
     border-left: 3px solid map_get($colors, bluec);
 
@@ -43,5 +40,15 @@
         color: map-get($colors, bluec);
       }
     }
+  }
+
+  .read{
+    // Remove border from last-child
+    border: 1px solid #dce7fe;
+    border-bottom: 0;
+  }
+
+  .messageComponent:last-child .messagePreview{
+    border-bottom: 1px solid #dce7fe;
   }
 }

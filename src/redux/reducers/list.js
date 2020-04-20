@@ -9,10 +9,13 @@ const initialState = {
 };
 
 export function list(state= initialState, actions){
+    console.log(actions);
     switch(actions.type) {
         case LIST_FILTERS.START_INTERVAL:
-            return Object.assign({}, state, {  
-                interval: setInterval(LIST_ACTIONS.addElement.bind(allMails[0]), actions.time)
+            return Object.assign({}, state, {
+                interval: setInterval(function (){
+                    actions.callback(allMails[0])
+                }, actions.time*100)
                });
         case LIST_FILTERS.CLEAR_INTERVAL:
             clearInterval(state.interval);
@@ -20,9 +23,9 @@ export function list(state= initialState, actions){
                 interval: null
             });
         case LIST_FILTERS.ADD_ELEMENT:
-            const new_element = Object.assign({}, actions.data, {id: uuidv4()});
+            const new_element = Object.assign({}, actions.data, {id: uuidv4(), isReaded: false});
             return Object.assign({}, state, {
-                messageList: [...state.messageList, new_element],
+                messageList: [new_element, ...state.messageList],
                 current: new_element
             });
         case LIST_FILTERS.CHANGE_STATE:
