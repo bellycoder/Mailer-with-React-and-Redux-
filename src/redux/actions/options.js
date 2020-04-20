@@ -1,0 +1,7 @@
+const OPTIONS_FILTERS = {
+    IS_SPAM: 'IS_SPAM',
+};
+
+const OPTIONS_ACTIONS = {};
+
+export {OPTIONS_FILTERS, OPTIONS_ACTIONS};
