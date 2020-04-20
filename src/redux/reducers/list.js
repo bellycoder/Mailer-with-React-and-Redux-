@@ -28,11 +28,11 @@ export function list(state= initialState, actions){
                 messageList: [new_element, ...state.messageList],
                 current: new_element
             });
-        case LIST_FILTERS.CHANGE_STATE:
+        case LIST_FILTERS.CHANGE_PROPERTIES:
             let current = {};
             const modifyMessages = state.messageList.map((item) => {
                 if(item.id === actions.id){
-                    item.isReaded = actions.isReaded;
+                    item = Object.assign({}, item, actions.newValues) ;
                     current = item;
                 }
                 return item;

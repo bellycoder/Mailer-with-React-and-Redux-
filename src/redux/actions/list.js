@@ -2,7 +2,8 @@ const LIST_FILTERS = {
     CLEAR_INTERVAL: 'CLEAR_INTERVAL',
     START_INTERVAL: 'START_INTERVAL',
     ADD_ELEMENT: 'ADD_ELEMENT',
-    CHANGE_STATE: "CHANGE_STATE"
+    CHANGE_PROPERTIES: 'CHANGE_PROPERTIES',
+    FILTER_MESSAGES: 'FILTER_MESSAGES'
 };
 
 
@@ -20,10 +21,14 @@ const LIST_ACTIONS = {
         type: LIST_FILTERS.ADD_ELEMENT,
         data
     }),
-    changeState: (id, isReaded) => ({
+    changeProperties: (id, newValues) => ({
         type: LIST_FILTERS.CHANGE_STATE,
         id,
-        isReaded
+        newValues
+    }),
+    filterMessages: (filters) => ({
+        type: LIST_FILERS.FILTER_MESSAGES,
+        filters
     })
 };
 

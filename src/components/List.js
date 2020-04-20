@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import MessagePreview from "./MessagePreview";
-import { connect } from 'react-redux';
-import {LIST_ACTIONS} from '../redux/actions/list'
+
 
 const List = class List extends Component {
 
@@ -43,19 +42,5 @@ const List = class List extends Component {
         cleanInterval(interval);
     }
 };
-
-const mapStateToProps = (state) => {
-    return state.List;
-};
-
-const mapDispatchToProps = (dispatch) => ({
-    startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
-    clearInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
-    addElement: (data) => dispatch(LIST_ACTIONS.addElement(data)),
-    changeState: (id, isReaded) => dispatch(LIST_ACTIONS.changeState(id, isReaded))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(List);
-
 
 
