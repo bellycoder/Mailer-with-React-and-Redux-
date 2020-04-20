@@ -1,4 +1,4 @@
-import {LIST_FILTERS, LIST_ACTIONS} from '../actions/list'
+import {LIST_FILTERS} from '../actions/list'
 import allMails from '../mail-data.json'
 import { v4 as uuidv4 } from 'uuid';
 

@@ -3,6 +3,7 @@
   grid-row: 3 /5 ;
   overflow: auto;
   height: 500px;
+  cursor: pointer;
 
   .messagePreview{
     display: flex;
@@ -46,6 +47,7 @@
     // Remove border from last-child
     border: 1px solid #dce7fe;
     border-bottom: 0;
+    padding-right: 2px;
   }
 
   .messageComponent:last-child .messagePreview{

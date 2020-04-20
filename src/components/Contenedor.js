@@ -11,13 +11,25 @@ import { connect } from 'react-redux';
 const Contenedor =  class Contenedor extends Component {
     constructor(props){
         super(props);
-        this.clearInterval = clearInterval.bind(this);
+        const {removeInterval, startInterval, changeProperties, addElement, requestElements} = this.props;
+
+        this.clearInterval = removeInterval.bind(this);
         this.startInterval = startInterval.bind(this);
         this.changeProperties = changeProperties.bind(this);
         this.addElement = addElement.bind(this);
-        this.addElement = addElement.bind(this);
+
+        this.startInterval(90, this.addElement);
+        requestElements();
     }
+
+    // Code cleanup to prevent timer to continue running
+    componentWillUnmount() {
+        const {interval} = this.props;
+        this.clearInterval(interval);
+    }
+
     render() {
+        const {messageList} = this.props;
         return (
             <div className="contenedor">
                 <Filter/>
@@ -25,11 +37,11 @@ const Contenedor =  class Contenedor extends Component {
                 <TittleMessage/>
                 <Search/>
                 <MessageBody/>
-                <List/>
+                <List changeProperties={this.changeProperties} messageList={messageList}/>
             </div>
         )
     }
-}
+};
 
 const mapStateToProps = (state) => {
     return state.List;
@@ -37,9 +49,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
-    clearInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
+    removeInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
     addElement: (data) => dispatch(LIST_ACTIONS.addElement(data)),
-    changeProperties: (id, newValues) => dispatch(LIST_ACTIONS.changeProperties(id, newValues))
+    changeProperties: (id, newValues) => dispatch(LIST_ACTIONS.changeProperties(id, newValues)),
+    requestElements: () => dispatch(LIST_ACTIONS.requestElements())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contenedor);

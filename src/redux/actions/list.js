@@ -3,6 +3,7 @@ const LIST_FILTERS = {
     START_INTERVAL: 'START_INTERVAL',
     ADD_ELEMENT: 'ADD_ELEMENT',
     CHANGE_PROPERTIES: 'CHANGE_PROPERTIES',
+    REQUEST_ELEMENTS: 'REQUEST_ELEMENTS',
     FILTER_MESSAGES: 'FILTER_MESSAGES'
 };
 
@@ -22,13 +23,16 @@ const LIST_ACTIONS = {
         data
     }),
     changeProperties: (id, newValues) => ({
-        type: LIST_FILTERS.CHANGE_STATE,
+        type: LIST_FILTERS.CHANGE_PROPERTIES,
         id,
         newValues
     }),
     filterMessages: (filters) => ({
-        type: LIST_FILERS.FILTER_MESSAGES,
+        type: LIST_FILTERS.FILTER_MESSAGES,
         filters
+    }),
+    requestElements: () => ({
+        type: LIST_FILTERS.REQUEST_ELEMENTS
     })
 };
 
