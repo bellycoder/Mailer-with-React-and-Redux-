@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export function list(state= initialState, actions){
-    console.log(actions);
     switch(actions.type) {
         case LIST_FILTERS.START_INTERVAL:
             return Object.assign({}, state, {
@@ -24,8 +23,7 @@ export function list(state= initialState, actions){
         case LIST_FILTERS.ADD_ELEMENT:
             const new_element = Object.assign({}, actions.data, {id: uuidv4(), isReaded: false});
             return Object.assign({}, state, {
-                messageList: [new_element, ...state.messageList],
-                current: new_element
+                messageList: [new_element, ...state.messageList]
             });
         case LIST_FILTERS.CHANGE_PROPERTIES:
             let current = {};

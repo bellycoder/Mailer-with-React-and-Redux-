@@ -18,7 +18,7 @@ const Contenedor =  class Contenedor extends Component {
         this.changeProperties = changeProperties.bind(this);
         this.requestElements = requestElements.bind(this);
         
-        this.startInterval(9,this.requestElements);
+        this.startInterval(90,this.requestElements);
         
         requestElements();
     }
@@ -37,7 +37,7 @@ const Contenedor =  class Contenedor extends Component {
                 <Options changeProperties={this.changeProperties} current={current}/>
                 <TittleMessage/>
                 <Search/>
-                <MessageBody/>
+                <MessageBody current={current}/>
                 <List changeProperties={this.changeProperties} messageList={messageList}/>
             </div>
         )
