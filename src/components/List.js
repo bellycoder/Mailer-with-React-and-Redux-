@@ -10,7 +10,6 @@ export default class List extends Component {
             </div>
         })   
     }
-
     onClickMessage(id){
         const {changeProperties} = this.props;
         changeProperties(id, {isReaded: true});

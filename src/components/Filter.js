@@ -11,12 +11,12 @@ export default class Filter extends Component {
                     <div className="select">
                         <select id="inbox-spam" defaultValue="filter_by">
                             <option disabled value="filter_by">Filter by</option>
-                                <option value="inbox">Inbox</option>
+                            <option value="inbox">Inbox</option>
                             <option value="spam">Spam</option>
+                            <option value="delete">Deleted</option>
                         </select>
                     </div>
-                </div>
-                
+                </div>   
         )
     }
 }

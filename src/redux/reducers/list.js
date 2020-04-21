@@ -42,9 +42,8 @@ export function list(state= initialState, actions){
                 current: current
             });
         case LIST_FILTERS.FILTER_MESSAGES:
-            /*let current = {};
-            const 
-            Object.assign({}, actions.data, {isSpam: false, from: " ", isReaded: true});*/
+          /*  let current = {};
+            const algo = Object.assign({}, actions.data, {isSpam: false, from: " ", isReaded: true});*/
 
         default:
             return state;

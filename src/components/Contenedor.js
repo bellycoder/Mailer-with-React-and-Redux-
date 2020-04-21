@@ -18,7 +18,7 @@ const Contenedor =  class Contenedor extends Component {
         this.changeProperties = changeProperties.bind(this);
         this.addElement = addElement.bind(this);
         
-        this.startInterval(90,this.addElement);
+        this.startInterval(900,this.addElement);
         
         requestElements();
     }
