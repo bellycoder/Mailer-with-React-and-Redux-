@@ -1,5 +1,4 @@
 import {LIST_FILTERS} from '../actions/list'
-import allMails from '../mail-data.json'
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
@@ -14,8 +13,8 @@ export function list(state= initialState, actions){
         case LIST_FILTERS.START_INTERVAL:
             return Object.assign({}, state, {
                 interval: setInterval(function (){
-                    actions.callback(allMails[0])
-                }, actions.time*100)
+                    actions.callback()
+                }, actions.time*1000)
                });
         case LIST_FILTERS.CLEAR_INTERVAL:
             clearInterval(state.interval);

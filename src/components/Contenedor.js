@@ -11,14 +11,14 @@ import { connect } from 'react-redux';
 const Contenedor =  class Contenedor extends Component {
     constructor(props){
         super(props);
-        const {removeInterval, startInterval, changeProperties, addElement, requestElements} = this.props;
+        const {removeInterval, startInterval, changeProperties, requestElements} = this.props;
 
-        this.clearInterval = removeInterval.bind(this);
+        this.removeInterval = removeInterval.bind(this);
         this.startInterval = startInterval.bind(this);
         this.changeProperties = changeProperties.bind(this);
-        this.addElement = addElement.bind(this);
+        this.requestElements = requestElements.bind(this);
         
-        this.startInterval(900,this.addElement);
+        this.startInterval(9,this.requestElements);
         
         requestElements();
     }
@@ -26,7 +26,7 @@ const Contenedor =  class Contenedor extends Component {
     // Code cleanup to prevent timer to continue running
     componentWillUnmount() {
         const {interval} = this.props;
-        this.clearInterval(interval);
+        this.removeInterval(interval);
     }
 
     render() {
@@ -51,7 +51,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
     removeInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
-    addElement: (data) => dispatch(LIST_ACTIONS.addElement(data)),
     changeProperties: (id, newValues) => dispatch(LIST_ACTIONS.changeProperties(id, newValues)),
     requestElements: () => dispatch(LIST_ACTIONS.requestElements())
 });
