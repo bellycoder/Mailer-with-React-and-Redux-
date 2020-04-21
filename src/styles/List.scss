@@ -2,12 +2,12 @@
   grid-column: 1 / 2 ;
   grid-row: 3 /5 ;
   overflow: auto;
-  height: 500px;
+  height: 500px;     /*responsive*/
   cursor: pointer;
 
   .messagePreview{
     display: flex;
-    width: calc(100% - 4px);
+    width: calc(100% - 4px);    /*responsive*/
     border: 1px solid #dce7fe;
     border-bottom: 0;
     background-color: white;
@@ -34,7 +34,7 @@
 
   .unread {
     background-color: map-get($colors, bluebg);
-    border-left: 3px solid map_get($colors, bluec);
+    border-left: 3px solid map-get($colors, bluec);
 
     .large_block {
       .sender {

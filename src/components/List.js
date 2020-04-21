@@ -5,10 +5,10 @@ export default class List extends Component {
     messageList() {
         const {messageList} = this.props;
         return messageList.map((current) => {
-            return <div className="messageComponent" onClick={() => this.onClickMessage(current.id)}>
-                <MessagePreview key={current.id} data={current}/>
+            return <div className="messageComponent" key={current.id} onClick={() => this.onClickMessage(current.id)}>
+                <MessagePreview data={current}/>
             </div>
-        })
+        })   
     }
 
     onClickMessage(id){
@@ -18,9 +18,11 @@ export default class List extends Component {
 
     render(){
         return (
-            <div className="lista">
-                {this.messageList()}
-            </div>
+            
+                <div className="lista">
+                    {this.messageList()}
+                </div>
+               
         )
     }
 };

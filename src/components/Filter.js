@@ -9,10 +9,10 @@ export default class Filter extends Component {
                         <a className="count">1</a>    
                     </div>
                     <div className="select">
-                        <select id="inbox-spam">
-                            <option disabled selected>Filter by</option>
-                                <option value="volvo">Inbox</option>
-                            <option value="saab">Spam</option>
+                        <select id="inbox-spam" defaultValue="filter_by">
+                            <option disabled value="filter_by">Filter by</option>
+                                <option value="inbox">Inbox</option>
+                            <option value="spam">Spam</option>
                         </select>
                     </div>
                 </div>

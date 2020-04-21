@@ -17,8 +17,9 @@ const Contenedor =  class Contenedor extends Component {
         this.startInterval = startInterval.bind(this);
         this.changeProperties = changeProperties.bind(this);
         this.addElement = addElement.bind(this);
-
-        this.startInterval(90, this.addElement);
+        
+        this.startInterval(90,this.addElement);
+        
         requestElements();
     }
 
@@ -29,11 +30,11 @@ const Contenedor =  class Contenedor extends Component {
     }
 
     render() {
-        const {messageList} = this.props;
+        const {messageList, current} = this.props;
         return (
             <div className="contenedor">
                 <Filter/>
-                <Options/>
+                <Options changeProperties={this.changeProperties} current={current}/>
                 <TittleMessage/>
                 <Search/>
                 <MessageBody/>

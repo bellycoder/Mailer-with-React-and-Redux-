@@ -41,6 +41,11 @@ export function list(state= initialState, actions){
                 messageList: modifyMessages,
                 current: current
             });
+        case LIST_FILTERS.FILTER_MESSAGES:
+            /*let current = {};
+            const 
+            Object.assign({}, actions.data, {isSpam: false, from: " ", isReaded: true});*/
+
         default:
             return state;
     }

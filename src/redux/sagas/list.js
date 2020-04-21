@@ -11,7 +11,7 @@ function* fetchMail() {
         console.log(mail);
         for(let i=0;i<mail.length;i++){
             const current = mail[i];
-            yield put({type:LIST_FILTERS.ADD_ELEMENT, data: current});
+            yield put({type:LIST_FILTERS.ADD_ELEMENT, data: current});  
         }
     } catch (e) {
         console.log(e.message);
