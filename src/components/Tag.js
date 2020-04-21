@@ -5,7 +5,18 @@ export default class Tag extends Component {
         const {current} = this.props;
         return (
             <div className="tag">
-                    {current.tag}
+                   {
+                    Object.entries(current).length !== 0 ?
+                        <div className="datail">    
+                            <div className="ptag">   
+                            <p>Tag</p>    
+                            </div>
+                            <div>
+                            <a className="json">{current.tag}</a>
+                            </div>
+                        </div>
+                        :""
+                }
             </div>
         )
     }

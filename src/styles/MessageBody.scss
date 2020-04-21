@@ -9,15 +9,6 @@
     font-family: $font;
     color: white;
   }
-  
-  .tag{
-    display: flex;
-    border: none;
-    background-color: white;
-    align-items: center;
-    border-radius: 2px;
-    box-shadow: 2px 1px 6px 1px rgba(161,161,161,1);
-  }   
 
   .currentTag{
     color: $font;

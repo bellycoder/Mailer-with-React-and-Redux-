@@ -1,12 +1,35 @@
 .tag{
     grid-column: 2 / 2;
     grid-row: 3 / 4;
-    margin: 5%;
-    -ms-grid-row-align: center;
-    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
     align-items: center;
-    font-family: $font;
-    font-size: 1.5vw;
-    background-color: yellowgreen;
+    border-radius: 2px;
+    
+    .datail{
+        display: flex;
+        border: none;
+        background-color: white;
+        align-items: center;
+        border-radius: 2px;
+        box-shadow: 2px 1px 6px 1px rgba(161,161,161,1);
+    }
+    .json{
+        color: $font;
+        text-align: center;
+        background: map-get($colors, redc);
+        width: 20px;
+        border-radius: 2px;
+        padding: 6px;
+        max-width: 10px;
+        margin: 10px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .ptag{
+        margin-left: 5%;
+        font-family: $font;
+    }
   
 }
