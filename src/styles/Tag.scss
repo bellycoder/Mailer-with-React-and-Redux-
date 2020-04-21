@@ -1,0 +1,12 @@
+.tag{
+    grid-column: 2 / 2;
+    grid-row: 3 / 4;
+    margin: 5%;
+    -ms-grid-row-align: center;
+    display: flex;
+    align-items: center;
+    font-family: $font;
+    font-size: 1.5vw;
+    background-color: yellowgreen;
+  
+}

@@ -17,8 +17,10 @@ body {
   border-radius: 8px;
   display: -ms-grid;
   display: grid;
-  grid-template-rows: repeat(4, auto);
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   -webkit-box-shadow: 3px 4px 12px -2px rgba(0, 0, 0, 0.65);
           box-shadow: 3px 4px 12px -2px rgba(0, 0, 0, 0.65);
 }
@@ -105,6 +107,7 @@ body {
 .contenedor .inboxFilter .inbox {
   margin-left: 20px;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .contenedor .inboxFilter .count {
@@ -151,25 +154,25 @@ body {
 }
 
 .contenedor .search input::-webkit-input-placeholder {
-  color: red;
+  color: #949898;
   font-family: "Helvetica";
   font-size: 12px;
 }
 
 .contenedor .search input:-ms-input-placeholder {
-  color: red;
+  color: #949898;
   font-family: "Helvetica";
   font-size: 12px;
 }
 
 .contenedor .search input::-ms-input-placeholder {
-  color: red;
+  color: #949898;
   font-family: "Helvetica";
   font-size: 12px;
 }
 
 .contenedor .search input::placeholder {
-  color: red;
+  color: #949898;
   font-family: "Helvetica";
   font-size: 12px;
 }
@@ -181,6 +184,9 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 /3;
+  margin: 5%;
+  font-family: "Helvetica";
+  font-size: 25px;
 }
 
 .contenedor .lista {
@@ -190,6 +196,10 @@ body {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 /5;
+  overflow: auto;
+  height: 500px;
+  /*responsive*/
+  cursor: pointer;
 }
 
 .contenedor .lista .messagePreview {
@@ -197,6 +207,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: calc(100% - 4px);
+  /*responsive*/
   border: 1px solid #dce7fe;
   border-bottom: 0;
   background-color: white;
@@ -221,17 +232,23 @@ body {
   padding-right: 15px;
 }
 
-.contenedor .lista .messagePreview:last-child {
-  border: 1px solid #dce7fe;
-}
-
-.contenedor .lista .read {
+.contenedor .lista .unread {
   background-color: #EEFAFF;
   border-left: 3px solid #03B9ED;
 }
 
-.contenedor .lista .read .large_block .sender {
+.contenedor .lista .unread .large_block .sender {
   color: #03B9ED;
+}
+
+.contenedor .lista .read {
+  border: 1px solid #dce7fe;
+  border-bottom: 0;
+  padding-right: 2px;
+}
+
+.contenedor .lista .messageComponent:last-child .messagePreview {
+  border-bottom: 1px solid #dce7fe;
 }
 
 .icon {

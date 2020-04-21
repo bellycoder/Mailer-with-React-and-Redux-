@@ -1,5 +1,5 @@
 $default-bg: #EEF4F9;
-$borders: 8px;
+$borders: 4px;
 $font: 'Helvetica';
 $fsize: 12px;
 $fcolor: #3B3D3F; 
@@ -39,11 +39,11 @@ body {
     @import "Search";
     @import "TitleMessage";
     @import "List";
+    @import "Tag";
 }
 
 .icon{
     width: 18px;
-}
-
+} 
 
 

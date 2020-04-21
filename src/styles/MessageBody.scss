@@ -1,5 +1,39 @@
 .messageBody{
-  grid-row: span 2;
-  border: 2px;
-  margin: 5%;
+  grid-row: span 3;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  background-color: blueviolet;
+ 
+  .messageData{
+    font-family: $font;
+    color: white;
+  }
+  
+  .tag{
+    display: flex;
+    border: none;
+    background-color: white;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 2px 1px 6px 1px rgba(161,161,161,1);
+  }   
+
+  .currentTag{
+    color: $font;
+    text-align: center;
+    background: pink;
+    border-radius: 2px;
+    padding: 7px;
+    max-width: 10px;
+    margin-left: 10px;
+  }
+  .body{
+    display: flex;
+    border: none;
+    background-color: white;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 2px 1px 6px 1px rgba(161,161,161,1);
+  }
 }

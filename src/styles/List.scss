@@ -1,9 +1,10 @@
 .lista{
   grid-column: 1 / 2 ;
-  grid-row: 3 /5 ;
+  grid-row: 3 /6 ;
   overflow: auto;
-  height: 500px;     /*responsive*/
+  height: 625px;     /*responsive*/
   cursor: pointer;
+  box-shadow: 5px 0px 10px -6px #888;
 
   .messagePreview{
     display: flex;

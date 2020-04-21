@@ -1,4 +1,12 @@
+$font: 'Helvetica';
 .tittleMessage{
   grid-column: 2 / 3 ;
   grid-row: 2 /3 ;
+  margin: 5%;
+  -ms-grid-row-align: center;
+  display: flex;
+  align-items: center;
+  font-family: $font;
+  font-size: 1.5vw;
+  background-color: yellowgreen;
 }

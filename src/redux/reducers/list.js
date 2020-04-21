@@ -8,6 +8,7 @@ const initialState = {
 };
 
 export function list(state= initialState, actions){
+  //  console.log(actions);
     switch(actions.type) {
         case LIST_FILTERS.START_INTERVAL:
             return Object.assign({}, state, {

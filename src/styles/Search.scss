@@ -1,9 +1,11 @@
 .search{
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  margin: 5%;
+  -ms-grid-row-align: center;
   display: flex;
   align-items: center;
-  margin: 5%; 
+  
 
   input[type=text] {
     width: 100%;

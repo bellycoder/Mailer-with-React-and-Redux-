@@ -5,8 +5,10 @@ import Options from './Options'
 import List from './List'
 import MessageBody from './MessageBody'
 import TittleMessage from './TittleMessage'
+import Tag from './tag'
 import {LIST_ACTIONS} from '../redux/actions/list'
 import { connect } from 'react-redux';
+
 
 const Contenedor =  class Contenedor extends Component {
     constructor(props){
@@ -35,8 +37,9 @@ const Contenedor =  class Contenedor extends Component {
             <div className="contenedor">
                 <Filter/>
                 <Options changeProperties={this.changeProperties} current={current}/>
-                <TittleMessage/>
+                <TittleMessage current={current}/>
                 <Search/>
+                <Tag current={current}/>
                 <MessageBody current={current}/>
                 <List changeProperties={this.changeProperties} messageList={messageList}/>
             </div>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-export default class TittleMessage extends Component {
+export default class Tag extends Component {
     render() {
         const {current} = this.props;
         return (
-            <div className="tittleMessage">
-                {current.from}
+            <div className="tag">
+                    {current.tag}
             </div>
         )
     }

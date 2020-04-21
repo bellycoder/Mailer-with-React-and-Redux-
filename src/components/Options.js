@@ -14,11 +14,13 @@ export default class Options extends Component {
     render() {
         return (
             <div className="options">
+                
                 <div>
                     <button className="buttonDelete">Delete</button>
                     <button className="buttonSpam" onClick={() => this.onClickSpam()}>Spam</button> 
                 </div>
                     <button className="buttonUnread" onClick={()=> this.onClickMarkUnread()}>Mark as unread</button>
+               
             </div>
         )
     }
