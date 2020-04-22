@@ -24,7 +24,7 @@ const Contenedor =  class Contenedor extends Component {
 
         // Set filter initially
         filterMessages({isSpam: false, isDeleted: false});
-        this.startInterval(90, this.requestElements);
+        this.startInterval(2, this.requestElements);
         requestElements();
     }
 

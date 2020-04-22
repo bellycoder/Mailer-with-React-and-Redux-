@@ -1,4 +1,15 @@
-
+$default-bg: #EEF4F9;
+$borders: 4px;
+$font: 'Helvetica';
+$fsize: 12px;
+$fcolor: #3B3D3F; 
+$colors:(
+        redc: #FC3401,
+        bluec: #03B9ED,
+        bluebg: #EEFAFF,   //unread
+        grayc: #F4F5F5      //read
+);
+$inner-margin: 15px;
 .messageBody{
   grid-row: span 3;
   margin-left: 5%;
