@@ -5,8 +5,8 @@ import Options from './Options'
 import List from './List'
 import MessageBody from './MessageBody'
 import TittleMessage from './TittleMessage'
-import Tag from './tag'
-import {LIST_ACTIONS, LIST_FILTERS} from '../redux/actions/list'
+import Tag from './Tag'
+import {LIST_ACTIONS} from '../redux/actions/list'
 import { connect } from 'react-redux';
 
 
@@ -14,15 +14,17 @@ const Contenedor =  class Contenedor extends Component {
     constructor(props){
         super(props);
         const {removeInterval, startInterval, changeProperties, requestElements, filterMessages} = this.props;
-     //exporting functions    
+
+        //exporting functions
         this.removeInterval = removeInterval.bind(this);
         this.startInterval = startInterval.bind(this);
         this.changeProperties = changeProperties.bind(this);
         this.requestElements = requestElements.bind(this);
         this.filterMessages = filterMessages.bind(this);
-        
-        this.startInterval(90,this.requestElements);
-        
+
+        // Set filter initially
+        filterMessages({isSpam: false, isDeleted: false});
+        this.startInterval(90, this.requestElements);
         requestElements();
     }
 
@@ -33,16 +35,16 @@ const Contenedor =  class Contenedor extends Component {
     }
 
     render() {
-        const {showList, current} = this.props;
+        const {showList, current, filterBy} = this.props;
         return (
             <div className="contenedor">
-                <Filter filterMessages={this.filterMessages}/>
-                <Options changeProperties={this.changeProperties} current={current}/>
+                <Filter messageList={showList} filterMessages={this.filterMessages} filterBy={filterBy}/>
+                <Options changeProperties={this.changeProperties} filterMessages={this.filterMessages} filterBy={filterBy} current={current}/>
                 <TittleMessage current={current}/>
-                <Search/>
+                <Search filterMessages={this.filterMessages} filterBy={filterBy}/>
                 <Tag current={current}/>
                 <MessageBody current={current}/>
-                <List changeProperties={this.changeProperties} messageList={showList}/>
+                <List changeProperties={this.changeProperties} messageList={showList} filterMessages={this.filterMessages} filterBy={filterBy}/>
             </div>
         )
     }
@@ -53,7 +55,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    filterMessages: (filter) => dispatch(LIST_ACTIONS.filterMessages(filter)),
+    filterMessages: (filter, reset=true) => dispatch(LIST_ACTIONS.filterMessages(filter, reset)),
     startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
     removeInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
     changeProperties: (id, newValues) => dispatch(LIST_ACTIONS.changeProperties(id, newValues)),
