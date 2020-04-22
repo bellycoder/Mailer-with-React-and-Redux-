@@ -3,9 +3,19 @@ $font: 'Helvetica';
   grid-column: 2 / 3 ;
   grid-row: 2 /3 ;
   margin: 5%;
-  -ms-grid-row-align: center;
-  display: flex;
   align-items: center;
-  font-family: $font;
-  font-size: 1.3vw;
+  border-radius: 2px;
+  
+  .subject{
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+  }
+  
+  .inSide{
+    margin-left: 2%;
+    font-family: $font;
+    font-size: 1.3vw;
+  }
+
 }

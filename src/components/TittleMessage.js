@@ -5,7 +5,11 @@ export default class TittleMessage extends Component {
         const {current} = this.props;
         return (
             <div className="tittleMessage">
-                {current.from}
+                <div className="subject">
+                    <div className="inSide">
+                        {current.from}
+                    </div>
+                </div>
             </div>
         )
     }
