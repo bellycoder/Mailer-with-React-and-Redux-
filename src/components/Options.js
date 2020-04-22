@@ -22,15 +22,22 @@ export default class Options extends Component {
     }
 
     render() {
-       
+       const {current} = this.props;
         return (
-            <div className="options">
-                <div className="two">
-                    <button className="buttonDelete" onClick={() => this.onClickDelete()}>Delete</button>
-                    <button className="buttonSpam" onClick={() => this.onClickSpam()}>Spam</button> 
-                </div>
-                    <button className="buttonUnread" onClick={()=> this.onClickMarkUnread()}>Mark as unread</button>
+            <div>
+                  {
+                    Object.entries(current).length !== 0 ?
+                        <div className="options">
+                            <div className="two">
+                                <button className="buttonDelete" onClick={() => this.onClickDelete()}>Delete</button>
+                                <button className="buttonSpam" onClick={() => this.onClickSpam()}>Spam</button> 
+                            </div>
+                                <button className="buttonUnread" onClick={()=> this.onClickMarkUnread()}>Mark as unread</button>
+                        </div>
+                        :""
+                }
             </div>
         )
     }
 }
+

@@ -1,7 +1,6 @@
 .options{
   grid-column-start: 2;
   grid-column-end: 3;
-  -ms-grid-row-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +15,6 @@
     background-color: map-get($colors , redc );
     color: white;
     border-radius: 2px;
-    border: none;
     padding: 5px;
     width: 70px;
     margin-left: 10px;
@@ -47,9 +45,12 @@
     text-align: center;
     cursor: pointer;
     float: right;
-    margin: 5%;
+    margin:4.5%;
+      .buttonUnread:hover {
+        background-color: gold;
+      }
   }
   .two{
-    margin: 5%;
+    margin-left: 5%;
   }
 }

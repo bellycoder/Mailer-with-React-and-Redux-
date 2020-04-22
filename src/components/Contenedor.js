@@ -38,13 +38,17 @@ const Contenedor =  class Contenedor extends Component {
         const {showList, current, filterBy} = this.props;
         return (
             <div className="contenedor">
+                <div className="side">
                 <Filter messageList={showList} filterMessages={this.filterMessages} filterBy={filterBy}/>
+                <Search filterMessages={this.filterMessages} filterBy={filterBy}/>
+                <List changeProperties={this.changeProperties} messageList={showList} filterMessages={this.filterMessages} filterBy={filterBy}/>
+                </div>
+                <div >
                 <Options changeProperties={this.changeProperties} filterMessages={this.filterMessages} filterBy={filterBy} current={current}/>
                 <TittleMessage current={current}/>
-                <Search filterMessages={this.filterMessages} filterBy={filterBy}/>
                 <Tag current={current}/>
                 <MessageBody current={current}/>
-                <List changeProperties={this.changeProperties} messageList={showList} filterMessages={this.filterMessages} filterBy={filterBy}/>
+                </div>
             </div>
         )
     }
