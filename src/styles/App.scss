@@ -39,6 +39,19 @@ body {
   box-shadow: 5px 0px 10px -6px #888;
 }
   
+}
+.icon{
+    width: 18px;
+} 
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+    .contenedor{
+    height: 1172px;
+    margin: 5%;
+    margin-top: 7%;
+    }
+} 
 
     @import "MessageBody";
     @import "Options";
@@ -47,9 +60,5 @@ body {
     @import "TitleMessage";
     @import "List";
     @import "Tag";
-}
-.icon{
-    width: 18px;
-} 
 
 

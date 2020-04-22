@@ -4,7 +4,6 @@
   overflow: auto;
   height: 625px;     /*responsive*/
   cursor: pointer;
-  box-shadow: 5px 0px 10px -6px #888;
   max-height: 578px;
   
   .messagePreview{
@@ -46,7 +45,6 @@
   }
 
   .read{
-    // Remove border from last-child
     border: 1px solid #dce7fe;
     border-bottom: 0;
     padding-right: 2px;
