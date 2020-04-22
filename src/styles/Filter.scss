@@ -3,13 +3,15 @@ $font: 'Helvetica';
 .inboxFilter {
   grid-column-start: 1;
   grid-column-end: 2;
-  -ms-grid-row-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   font-family: $font;
   box-shadow: 5px -4px 10px -6px #888;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e1ecfe;
   
   .inbox {
     margin-left: 20px;
@@ -32,6 +34,5 @@ $font: 'Helvetica';
 
   .select {
     margin: 5%;
-    
   }
 }

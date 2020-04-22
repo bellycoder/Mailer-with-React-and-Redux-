@@ -36,6 +36,8 @@
     border-radius: 2px;
     box-shadow: 0px 2px 6px 1px rgba(161,161,161,1);
     justify-content: space-between;
+    align-items: center;
+    justify-items: center;
   } 
   .buttonReplay{
     background-color:map-get($colors, bluec );
@@ -46,11 +48,13 @@
     border: none;
     padding: 5px;
     width: auto;
+    height: 100%;
     text-align: center;
     cursor: pointer;
     float: right;
   }  
   .icon{
-    width: 18px;
+    padding: 5px;
+    height: 60%;
   }
 }

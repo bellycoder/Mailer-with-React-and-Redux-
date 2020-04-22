@@ -33,7 +33,7 @@ const Contenedor =  class Contenedor extends Component {
     }
 
     render() {
-        const {showList, current} = this.props;
+        const {messageList, current} = this.props;
         return (
             <div className="contenedor">
                 <Filter filterMessages={this.filterMessages}/>
@@ -42,7 +42,7 @@ const Contenedor =  class Contenedor extends Component {
                 <Search/>
                 <Tag current={current}/>
                 <MessageBody current={current}/>
-                <List changeProperties={this.changeProperties} messageList={showList}/>
+                <List changeProperties={this.changeProperties} messageList={messageList}/>
             </div>
         )
     }
