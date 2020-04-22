@@ -31,9 +31,10 @@ const LIST_ACTIONS = {
         id,
         newValues
     }),
-    filterMessages: (filter) => ({
+    filterMessages: (filter, reset) => ({
         type: LIST_FILTERS.FILTER_MESSAGES,
-        filter
+        filter,
+        reset
     }),
     requestElements: () => ({
         type: LIST_FILTERS.REQUEST_ELEMENTS

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MessagePreview from "./MessagePreview";
 
 export default class List extends Component {
+
     messageList() {
         const {messageList} = this.props;
         return messageList.map((current) => {
@@ -10,18 +11,18 @@ export default class List extends Component {
             </div>
         })   
     }
+
     onClickMessage(id){
-        const {changeProperties} = this.props;
+        const {changeProperties, filterBy, filterMessages} = this.props;
         changeProperties(id, {isReaded: true});
+        filterMessages(filterBy, false);
     }
 
     render(){
         return (
-            
-                <div className="lista">
-                    {this.messageList()}
-                </div>
-               
+            <div className="lista">
+                {this.messageList()}
+            </div>
         )
     }
 };
