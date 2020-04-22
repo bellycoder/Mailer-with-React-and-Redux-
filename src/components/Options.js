@@ -25,7 +25,7 @@ export default class Options extends Component {
        
         return (
             <div className="options">
-                <div>
+                <div className="two">
                     <button className="buttonDelete" onClick={() => this.onClickDelete()}>Delete</button>
                     <button className="buttonSpam" onClick={() => this.onClickSpam()}>Spam</button> 
                 </div>

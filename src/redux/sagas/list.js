@@ -15,7 +15,7 @@ function* fetchMail() {
             yield put({type:LIST_FILTERS.ADD_ELEMENT, data: current});  
         }
         let {filterBy} = yield select(getList);
-        yield put({type:LIST_FILTERS.FILTER_MESSAGES, filter: filterBy, reset: false});
+        yield put({type:LIST_FILTERS.FILTER_MESSAGES, filter: filterBy, reset: false}); //borra mensaje actual
     } catch (e) {
         console.log(e.message);
     }

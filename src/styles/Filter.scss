@@ -8,10 +8,10 @@ $font: 'Helvetica';
   justify-content: space-between;
   width: 100%;
   font-family: $font;
-  box-shadow: 5px -4px 10px -6px #888;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #e1ecfe;
+  box-shadow: 5px 0px 10px -6px #888;
   
   .inbox {
     margin-left: 20px;
@@ -21,7 +21,7 @@ $font: 'Helvetica';
 
   .count {
     color: #ffffff;
-    text-align: center;
+    text-align: center;  
     background: map-get($colors, redc);
     width: 20px;
     border-radius: 20px;

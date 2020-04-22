@@ -42,6 +42,11 @@ body {
     @import "Tag";
 }
 
+.leftSide{
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
+    box-shadow: 5px 0px 10px -6px #888;
+}
 .icon{
     width: 18px;
 } 

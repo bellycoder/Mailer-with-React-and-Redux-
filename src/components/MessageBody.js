@@ -9,7 +9,9 @@ export default class MessageBody extends Component {
                     Object.entries(current).length !== 0 ?
                         <div>    
                             <div className="body">
-                            <p>{current.body}</p>
+                                <div className="info">
+                                   {current.body}
+                                </div>   
                             </div>
                             <div className="body1">
                                 <button className="buttonReplay">Replay</button>
