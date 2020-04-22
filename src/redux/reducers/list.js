@@ -4,7 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 const initialState = {
     interval: null,
     messageList: [],
-    current: {}
+    current: {},
+    showList: []
 };
 
 export function list(state= initialState, actions){
@@ -39,9 +40,11 @@ export function list(state= initialState, actions){
                 messageList: modifyMessages,
                 current: current
             });
-        case LIST_FILTERS.FILTER_MESSAGES:
-          /*  let current = {};
-            const algo = Object.assign({}, actions.data, {isSpam: false, from: " ", isReaded: true});*/
+        case LIST_FILTERS.SAVE_OBJECTS:
+            return Object.assign({}, state, {
+                showList: actions.data,
+                current: {}
+            })
 
         default:
             return state;

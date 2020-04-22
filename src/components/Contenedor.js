@@ -6,19 +6,20 @@ import List from './List'
 import MessageBody from './MessageBody'
 import TittleMessage from './TittleMessage'
 import Tag from './tag'
-import {LIST_ACTIONS} from '../redux/actions/list'
+import {LIST_ACTIONS, LIST_FILTERS} from '../redux/actions/list'
 import { connect } from 'react-redux';
 
 
 const Contenedor =  class Contenedor extends Component {
     constructor(props){
         super(props);
-        const {removeInterval, startInterval, changeProperties, requestElements} = this.props;
-
+        const {removeInterval, startInterval, changeProperties, requestElements, filterMessages} = this.props;
+     //exporting functions    
         this.removeInterval = removeInterval.bind(this);
         this.startInterval = startInterval.bind(this);
         this.changeProperties = changeProperties.bind(this);
         this.requestElements = requestElements.bind(this);
+        this.filterMessages = filterMessages.bind(this);
         
         this.startInterval(90,this.requestElements);
         
@@ -32,16 +33,16 @@ const Contenedor =  class Contenedor extends Component {
     }
 
     render() {
-        const {messageList, current} = this.props;
+        const {showList, current} = this.props;
         return (
             <div className="contenedor">
-                <Filter/>
+                <Filter filterMessages={this.filterMessages}/>
                 <Options changeProperties={this.changeProperties} current={current}/>
                 <TittleMessage current={current}/>
                 <Search/>
                 <Tag current={current}/>
                 <MessageBody current={current}/>
-                <List changeProperties={this.changeProperties} messageList={messageList}/>
+                <List changeProperties={this.changeProperties} messageList={showList}/>
             </div>
         )
     }
@@ -52,6 +53,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+    filterMessages: (filter) => dispatch(LIST_ACTIONS.filterMessages(filter)),
     startInterval: (time, callback) => dispatch(LIST_ACTIONS.startInterval(time, callback)),
     removeInterval: (interval) => dispatch(LIST_ACTIONS.clearInterval(interval)),
     changeProperties: (id, newValues) => dispatch(LIST_ACTIONS.changeProperties(id, newValues)),

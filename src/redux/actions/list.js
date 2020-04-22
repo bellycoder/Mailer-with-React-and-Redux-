@@ -7,7 +7,8 @@ const LIST_FILTERS = {
     CHANGE_PROPERTIES: 'CHANGE_PROPERTIES',
     REQUEST_ELEMENTS: 'REQUEST_ELEMENTS',
     FILTER_MESSAGES: 'FILTER_MESSAGES',
-    IS_SPAM: 'IS_SPAM'
+    IS_SPAM: 'IS_SPAM',
+    SAVE_OBJECTS: 'SAVE_OBJECTS'
 };
 
 
@@ -30,9 +31,9 @@ const LIST_ACTIONS = {
         id,
         newValues
     }),
-    filterMessages: (filters) => ({
+    filterMessages: (filter) => ({
         type: LIST_FILTERS.FILTER_MESSAGES,
-        filters
+        filter
     }),
     requestElements: () => ({
         type: LIST_FILTERS.REQUEST_ELEMENTS
