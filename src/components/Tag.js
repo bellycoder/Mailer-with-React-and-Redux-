@@ -9,7 +9,7 @@ export default class Tag extends Component {
                     Object.entries(current).length !== 0 ?
                         <div className="datail">    
                             <div className="ptag">   
-                            <p>Tag</p>    
+                            <p>Tags</p>    
                             </div>
                             <div>
                             <a className="json">{current.tag}</a>

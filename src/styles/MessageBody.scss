@@ -3,7 +3,6 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-  background-color: blueviolet;
  
   .messageData{
     font-family: $font;
@@ -20,11 +19,38 @@
     margin-left: 10px;
   }
   .body{
-    display: flex;
+    //display: flex;
+    height: 360px;
     border: none;
     background-color: white;
     align-items: center;
     border-radius: 2px;
-    box-shadow: 2px 1px 6px 1px rgba(161,161,161,1);
+    box-shadow: 0px 1px 6px 1px rgba(161,161,161,1);
+  }
+  .body1{
+    //display: flex;
+    height: 30px;
+    border: none;
+    background-color: map-get($colors, grayc);
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0px 2px 6px 1px rgba(161,161,161,1);
+    justify-content: space-between;
+  } 
+  .buttonReplay{
+    background-color:map-get($colors, bluec );
+    font-family: $font;
+    font-size: 12px;
+    color: white;
+    border-radius: 2px;
+    border: none;
+    padding: 5px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+  }  
+  .icon{
+    width: 18px;
   }
 }
